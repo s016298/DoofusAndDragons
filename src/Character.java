@@ -18,8 +18,11 @@ public class Character implements Serializable {
 		curHealth = health;
 	}
 	//getters
-	public int gethealth(){
+	public int getCurrentHealth(){
 		return curHealth;
+	}
+	public int getHealth(){
+		return health;
 	}
 	public ArrayList<Item> getInventory(){
 		return Inventory;
@@ -27,13 +30,25 @@ public class Character implements Serializable {
 	public Item getItem(int ItemId){
 		return Inventory.get(ItemId);
 	}
-	public String getname(){
+	public String getName(){
 		return name;
 	}
-	public int getstr(){
+	public int getStr(){
 		return str;
 	}
-
+	public int getTou(){
+		return tou;
+	}
+	public int getSpd(){
+		return spd;
+	}
+	public int getIntel(){
+		return intel;
+	}
+	public int getRan(){
+		return ran;
+	}
+	
 	//setters
 	
 	public void addItem(int i, Item it){

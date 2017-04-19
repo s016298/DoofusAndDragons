@@ -7,11 +7,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class DandDMain{
 
+	public static Character c;
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 	boolean doesItExist = Files.exists(Paths.get("dAndD.txt"));
 	//below is reference for boolean statements in text, use for Item toString
 	//System.out.println(1+2==2?"yes":"no");
-	Character c;
+	
 	
 	if (doesItExist){
 				FileInputStream fis = new FileInputStream("dAndD.txt");
@@ -33,7 +34,7 @@ public class DandDMain{
 		System.out.println(c);
 		System.out.println("Prints uses of Item Retyrbed Cool Sword");
 		System.out.println(c.getItem(0).getUses());
-
+		System.out.println(rollDice());
 		out.writeObject(c);
 		out.close();
 
@@ -60,11 +61,31 @@ public class DandDMain{
 		//stupid events
 	/*Need to add getters for every stat for this to work*/	
 	
-	
-//		public static boolean stupidEventStatus(){
-//			return 
-//		}
-	
+	public static int turnsToStupidEvent(){
+		return (20-c.getRan())/2;
+	}
+	//random events
+	public static int strEvent(){
+
+		return c.getStr() + (int) Math.floor(Math.random()*c.getRan())+1;
+	}
+	public static int touEvent(){
+
+		return c.getTou() + (int) Math.floor(Math.random()*c.getRan())+1;
+	}
+	public static int spdEvent(){
+		Scanner s = new Scanner(System.in);
+
+		return c.getSpd() + (int) Math.floor(Math.random()*c.getRan())+1;
+	}
+	public static int intelEvent(){
+		Scanner s = new Scanner(System.in);
+
+		return c.getIntel() + (int) Math.floor(Math.random()*c.getRan())+1;
+	}
+	public static int rollDice(){
+		return (int) Math.floor(Math.random()*20+1);
+	}
 	
 	
 }
