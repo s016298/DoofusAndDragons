@@ -17,38 +17,24 @@ public class DandDMain{
 	if (doesItExist){
 				FileInputStream fis = new FileInputStream("dAndD.txt");
 				ObjectInputStream in = new ObjectInputStream(fis);
-				c = (Character)in.readObject();
-				//c = new Character("Justin", 10, 10, 10, 10, 10,65);
-			in.close();
-			FileOutputStream fos = new FileOutputStream("dAndD.txt");
-			ObjectOutputStream out = new ObjectOutputStream(fos);
-			System.out.println("Prints current configs");
-			System.out.println(c);
-			c.addItem(0, new Item("Cool Sword", false, true, 0, 100000, 0));
-	System.out.println("Prints inventory now that Cool Sword has been added");
-			System.out.println(c.getInventory());
-		c.deleteItem(0);
-	System.out.println("Deletes Cool Sword, and then Prints inventory");
-		System.out.println(c.getInventory());
-		c.addItem(0, new Item("Retyrbed Cool Sword", false, true, 0, 100000, 0));
-		System.out.println(c);
-		System.out.println("Prints uses of Item Retyrbed Cool Sword");
-		System.out.println(c.getItem(0).getUses());
-		System.out.println(rollDice());
-		out.writeObject(c);
-		out.close();
+				in.close();
+			
+				FileOutputStream fos = new FileOutputStream("dAndD.txt");
+				ObjectOutputStream out = new ObjectOutputStream(fos);
+			
+				out.writeObject(c);
+				out.close();
 
 	}else{
-	Scanner s = new Scanner(System.in);
-	c = new Character("Justin", 10, 10, 10, 10, 10,65);
-	FileOutputStream fos = new FileOutputStream("dAndD.txt");
-	ObjectOutputStream out = new ObjectOutputStream(fos);
-//Character c;
+			Scanner s = new Scanner(System.in);
+			FileOutputStream fos = new FileOutputStream("dAndD.txt");
+			ObjectOutputStream out = new ObjectOutputStream(fos);
+			//Character c;
 	
-	out.writeObject(c);
-	out.close();
+			out.writeObject(c);
+			out.close();
 
-//System.out.println(c);
+			System.out.println(c);
 	
 	}
 
