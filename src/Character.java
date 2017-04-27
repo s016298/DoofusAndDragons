@@ -91,7 +91,7 @@ public class Character implements Serializable {
 		curHealth = health;
 	}
 	public String toString(){
-		return "Name is "+name+ " strength is "+str+" toughness is "+ tou+" Speed is "+ spd+" intelelligence is "+intel+" randomness is "+ran +" Total health is "+health+" but current health is "+curHealth+ " Items are "+ Inventory.toString();
+		return name+ ", strength is "+str+", toughness is "+ tou+", Speed is "+ spd+", intelelligence is "+intel+", randomness is "+ran + (health==curHealth? ", health is "+ health : "health is "+health+", but current health is "+curHealth)+ ", items are "+ Inventory.toString();
 	}
 	
 	

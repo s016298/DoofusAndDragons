@@ -7,7 +7,6 @@ public  Turns(int turnNum){
 	this.turnNum = turnNum;
 }
 
-
 public int getTurns(){
 	return turnNum;
 }
