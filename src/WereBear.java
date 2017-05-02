@@ -1,37 +1,45 @@
+import java.io.Serializable;
+public class WereBear extends Person {
 
-public class WereBear {
-	private Character humanForm;
-	private Character bearForm;
-	private Character curForm;
-	private String name;
+	private boolean isWereBear;
+	private Person bearForm;
+	private Person curForm;
+	private Person humanForm;
 	
 	//constructor
-	public WereBear(String name, Character humanForm, Character bearForm){
-		this.humanForm  = humanForm;
+	public WereBear(Person bearForm, String name, boolean isWereBear, int str, int tou, int spd, int intel, int ran, int health){
+		super(name, isWereBear, str, tou,  spd, intel, ran, health);
 		this.bearForm = bearForm;
-		curForm = humanForm;
-		this.name = name;
+		curForm = new Person(name, isWereBear, str, tou, spd, intel, ran, health);
+		humanForm = new Person(name, isWereBear, str, tou, spd, intel, ran, health);
 	}
+
 	
 	//getter
-	public Character getHuman(){
-		return humanForm;
-	}
-	public Character getBear(){
+
+	public Person getBear(){
 		return bearForm;
 	}
-	public Character getCurrent(){
+	public Person getCurrent(){
 		return curForm;
+	}
+	public Person getHuman(){
+		return humanForm;
 	}
 	//setter
 	public void setBearForm(){
 		curForm = bearForm;	
 	}
 	public void setHumanForm(){
-		curForm = humanForm;
+		curForm = humanForm;	
 	}
+
+	
+	
+	
+
 	public String toString(){
-		return "Werebear " + bearForm.toString() + "during bear form and " + humanForm.toString();
+		return "Werebear " + bearForm.toString() + "during bear form and " ;
 	}
 	
 }

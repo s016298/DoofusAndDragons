@@ -7,43 +7,42 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class DandDMain{
 
-	public static Character c, c2, d, e, f;
+	public static Person c, d, e, f;
 	public static Turns turns;
 	//codes for when an event happens
 	public static int turnsLeft;
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 	Scanner s = new Scanner(System.in);
 	while (true){
-		boolean doesYluExist = Files.exists(Paths.get("Y'lu.txt"));
+	boolean doesYluExist = Files.exists(Paths.get("Y'lu.txt"));
 	boolean doesCorvusExist = Files.exists(Paths.get("Corvus.txt"));
 	boolean doesRandyExist = Files.exists(Paths.get("SirRandy.txt"));
 	boolean doesDatBoiExist = Files.exists(Paths.get("DatBoi.txt"));
 	boolean doesTurnsExist = Files.exists(Paths.get("Turns.txt"));
-	boolean doesYluBearExist = Files.exists(Paths.get("Y'luBear.txt"));
 	//below is reference for boolean statements in text, use for Item toString
 	//System.out.println(1+2==2?"yes":"no");
 	
 	/*checks to see if the file save file exists. If it does, the data from that file is inputed 
 	 * into the corresponding objects*/
 	if (doesYluExist&&doesCorvusExist&&doesRandyExist&&doesDatBoiExist&&doesTurnsExist){
-		/** create a file input steam for every character */	
+		/** create a file input steam for every Person */	
 		//creates file input stream and takes data
 		FileInputStream fis = new FileInputStream("Y'lu.txt");
 				ObjectInputStream in = new ObjectInputStream(fis);
-				c = (Character)in.readObject();
+				c = (Person)in.readObject();
 				
 				in.close();
 				FileInputStream fis1 = new FileInputStream("Corvus.txt");
 				ObjectInputStream in1 = new ObjectInputStream(fis1);
-				d = (Character)in1.readObject();
+				d = (Person)in1.readObject();
 				in1.close();
 				FileInputStream fis2 = new FileInputStream("SirRandy.txt");
 				ObjectInputStream in2 = new ObjectInputStream(fis2);
-				e = (Character)in2.readObject();
+				e = (Person)in2.readObject();
 				in2.close();
 				FileInputStream fis3 = new FileInputStream("DatBoi.txt");
 				ObjectInputStream in3 = new ObjectInputStream(fis3);
-				f = (Character)in3.readObject();
+				f = (Person)in3.readObject();
 				in3.close();
 				//file input stream for turns
 				FileInputStream turnsInput = new FileInputStream("Turns.txt");
@@ -62,7 +61,7 @@ public class DandDMain{
 
 				System.out.println(turns);
 				
-	/**create a file output steam for every character*/
+	/**create a file output steam for every Person*/
 				FileOutputStream fos = new FileOutputStream("Y'lu.txt");
 				ObjectOutputStream out = new ObjectOutputStream(fos);
 				out.writeObject(c);
@@ -87,26 +86,22 @@ public class DandDMain{
 	}else{
 			
 System.out.println("s");
-			//Character c;
+			//Person c;
 			FileOutputStream fos = new FileOutputStream("Y'lu.txt");
 			ObjectOutputStream out = new ObjectOutputStream(fos);
-			c = new Character("Y'lu", 12, 13, 10, 11, 10, 79);
+			c = new Person("Y'lu", false, 12, 13, 10, 11, 10, 79);
 			out.writeObject(c);
-			FileOutputStream fos12 = new FileOutputStream("Y'lu.txt");
-			ObjectOutputStream out12 = new ObjectOutputStream(fos12);
-			c = new Character("Y'lu of Bear", 12, 13, 10, 11, 10, 79);
-			out12.writeObject(c2);
 			FileOutputStream fos1 = new FileOutputStream("Corvus.txt");
 			ObjectOutputStream out1 = new ObjectOutputStream(fos1);
-		    d = new Character("Corvus", 9, 11, 10, 14, 10, 63);
+		    d = new Person("Corvus", false, 9, 11, 10, 14, 10, 63);
 			out1.writeObject(d);
 			FileOutputStream fos2 = new FileOutputStream("SirRandy.txt");
 			ObjectOutputStream out2 = new ObjectOutputStream(fos2);
-			e = new Character("SirRandy", 9, 12, 10, 11, 12, 69);
+			e = new Person("SirRandy",false, 9, 12, 10, 11, 12, 69);
 			out2.writeObject(e);
 			FileOutputStream fos3 = new FileOutputStream("DatBoi.txt");
 			ObjectOutputStream out3 = new ObjectOutputStream(fos3);
-			f = new Character("DatBoi", 11, 12, 10, 9, 14, 67);
+			f = new Person("DatBoi",false, 11, 12, 10, 9, 14, 67);
 			out3.writeObject(f);
 			FileOutputStream turnsOutputStream = new FileOutputStream("Turns.txt");
 			ObjectOutputStream  objectOut = new ObjectOutputStream(turnsOutputStream);
@@ -123,9 +118,8 @@ System.out.println("s");
 	while (true) {
 	while (selection<1||selection>6){
 	//stuff
-		//print out data for each character
+		//print out data for each Person
 	System.out.println(c);
-	System.out.println(c2);
 	System.out.println(d);
 	System.out.println(e);
 	System.out.println(f);

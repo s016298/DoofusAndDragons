@@ -1,15 +1,16 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-public class Character implements Serializable {
+public class Person implements Serializable {
 
 	private int str, tou, spd, intel, ran, health, curHealth;
 	private String name;
+	private boolean isWereBear;
 	//private Item[] Inventory = new Item[100];
 	
 	/** need to add character status as a class and then as a part of character class */
 	private ArrayList<Item> Inventory = new ArrayList<Item>();
-	public Character (String name ,int str, int tou, int spd, int intel, int ran, int health){
+	public Person(String name, boolean isWereBear, int str, int tou, int spd, int intel, int ran, int health){
 		this.name = name;
 		this.str = str;
 		this.tou = tou;
@@ -17,9 +18,14 @@ public class Character implements Serializable {
 		this.intel = intel;
 		this.ran = ran;
 		this.health = health;
-		curHealth = health;
+		this.isWereBear = isWereBear;
+		this.curHealth = health;
 	}
+
 	//getters
+	public boolean wereBearStatus(){
+		return isWereBear;
+	}
 	public int getCurrentHealth(){
 		return curHealth;
 	}
