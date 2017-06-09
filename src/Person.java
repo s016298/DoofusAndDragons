@@ -69,6 +69,9 @@ public class Person implements Serializable {
 	public void changeHealth(){
 		health = tou*5+((int) Math.random()*ran);
 	}
+	public void changeHealthValue(int newHealth){
+		health = newHealth;
+	}
 	public void loseHealth(int losehealth){
 		curHealth -= losehealth;
 	

@@ -1,7 +1,7 @@
 import java.io.Serializable;
 public class WereBear extends Person {
 
-	private boolean isWereBear;
+	
 	private Person bearForm;
 	private Person curForm;
 	private Person humanForm;
@@ -39,7 +39,7 @@ public class WereBear extends Person {
 	
 
 	public String toString(){
-		return "Werebear " + bearForm.toString() + "during bear form and " ;
+		return "Werebear " + bearForm.toString() + "  during bear form, and " + humanForm.toString()+" during human form.";
 	}
 	
 }
