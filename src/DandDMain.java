@@ -1,4 +1,8 @@
-
+//Justin Cannan
+//Some random time
+//DandDMain
+/*Some code meant to simplify the playing of Doofus and Dragons for the DM. I made much of this Freshman year of highschool, but now,
+ a few months later, I'm looking to improve some of the code and to finish the project.*/
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
